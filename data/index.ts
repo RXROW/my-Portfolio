@@ -39,13 +39,13 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: " Do you want to start a project together?",
     description: "",
-    className: "lg:col-span-1 md:col-span-1 md:row-span-1",
+    className: "lg:col-span-2 md:col-span-2 md:row-span-1",
     imgClassName: "",
-    titleClassName: "justify-start",
+    titleClassName: "justify-start ",
     img: "/grid.svg",
-    spareImg: "/b4.svg",
+    spareImg: "",
   },
 
   {
@@ -58,16 +58,8 @@ export const gridItems = [
     img: "/b5.svg",
     spareImg: "/grid.svg",
   },
-  {
-    id: 6,
-    title: "Do you want to start a project together?",
-    description: "",
-    className: "lg:col-span-1 md:col-span-1 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
-  },
+ 
+ 
 ];
 
 export const projects = [

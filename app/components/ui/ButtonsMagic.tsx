@@ -6,7 +6,7 @@ const ButtonsMagic = ({
   title:string; icon:React.ReactNode; position:string; handleClick?:()=>void;otherClasses?:string;
 } ) => {
   return (
-    <button className="relative inline-flex h-12 overflow-hidden rounded-sm p-[1px]  mt-10 md:w-60 ">
+    <button className="relative inline-flex h-12 overflow-hidden rounded-sm p-[1px]  mt-10 md:w-60 " onClick={handleClick}>
     <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#7a1bef_0%,#393BB2_50%,#E2CBFF_100%)]" />
     <span className={`inline-flex h-full w-full
      cursor-pointer items-center justify-center 

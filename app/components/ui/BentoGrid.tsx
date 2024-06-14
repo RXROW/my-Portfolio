@@ -1,6 +1,11 @@
+"use client"
 import { cn } from "@/utils/cn";
-import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
+import  {BoxesCore}  from "./BackgroundBoxes";
 import {  GlobeDemo } from "./GridGlobe";
+ 
+import { useState } from "react";
+import ButtonsMagic from "./ButtonsMagic";
+import {  IoCopyOutline } from "react-icons/io5";
 export const BentoGrid = ({
   className,
   children,
@@ -22,6 +27,7 @@ export const BentoGrid = ({
  
 
 
+
 export const BentoGridItem = ({
   className,
   title,
@@ -41,10 +47,15 @@ export const BentoGridItem = ({
   spareImg?: string;
   id?: number;
 }) => {
+  const [copied , setCopied] = useState(false);
+  const handleCopy =()=>{
+    navigator.clipboard.writeText('aslamalmswdya@gmail.com');
+    setCopied(true)
+  }
   return (
     <div
       className={cn(
-        "row-span-1 rounded-xl  overflow-hidden relative group/bento hover:shadow-xl transition duration-200 shadow-input  border   border-white/[0.1]    justify-between flex flex-col space-y-4",
+        "row-span-1 rounded-xl  overflow-hidden relative group/bento hover:shadow-xl transition duration-200 shadow-input  border   border-white/[0.1]    justify-between flex sm:h-auto h-48 flex-col space-y-4",
         className
       )}
       style={{
@@ -63,10 +74,8 @@ export const BentoGridItem = ({
           <img src={spareImg} alt={spareImg} className="object-center object-cover w-full h-full" />
         </div>
       )}
-      {id === 6 && (
-        <BackgroundGradientAnimation>
-          <div className="absolute z-50 flex items-center justify-center text-white font-bold" />
-        </BackgroundGradientAnimation>
+      {id === 4 && (
+     <BoxesCore/>
       )}
       {id===2 && (
         <GlobeDemo/>
@@ -96,14 +105,22 @@ export const BentoGridItem = ({
         </div>
         
       )}
-      <div
-        className={cn(
-          titleClassName,
-          'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10  '
-        )}
-      >
+      {id === 4 &&(
+      <div className=" relative">
+        <div className={`flex items-center  justify-center flex-col`}>
+          <ButtonsMagic 
+          title={copied ? 'Email Copied (^_^)' :'Copy My Email'}
+          position="left"
+          icon={<IoCopyOutline/>} 
+          handleClick={handleCopy}/>
        
+         </div>
+
       </div>
+
+
+      )}
+     
       <div >
         <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 absolute top-3 left-5">
           {title}
